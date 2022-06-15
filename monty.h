@@ -1,5 +1,5 @@
-#ifndef _MAIN_H
-#define _MAIN_H
+#ifndef _MONTY_H
+#define _MONTY_H
 
 #include <stdlib.h>
 /**
@@ -33,4 +33,4 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-#endif	/*_MAIN_H*/
+#endif	/*_MONTY_H*/
