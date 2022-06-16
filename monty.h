@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
 
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -52,6 +53,9 @@ unsigned int token_arr_len(void);
 int is_empty_line(char *line, char *delims);
 void (*get_op_func(char *opcode))(stack_t**, unsigned int);
 int monty(FILE *bytecodes);
+void free_stack(stack_t **stack);
+int init_stack(stack_t **stack);
+int check_mode(stack_t *stack);
 
 char **strtow(char *str, char *delims);
 
