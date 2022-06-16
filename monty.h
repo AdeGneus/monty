@@ -31,7 +31,6 @@ typedef struct stack_s
 	struct stack_s *prev;
 	struct stack_s *next;
 
-
 } stack_t;
 
 /**
@@ -51,7 +50,7 @@ typedef struct instruction_s
 void free_tokens(void);
 unsigned int token_arr_len(void);
 int is_empty_line(char *line, char *delims);
-void (*get_op_func(char *opcode))(stack_t**, unsigned int);
+void (*get_op_func(char *opcode))(stack_t **, unsigned int);
 int monty(FILE *bytecodes);
 void free_stack(stack_t **stack);
 int init_stack(stack_t **stack);
@@ -70,11 +69,13 @@ char *get_int(int num);
 unsigned int _abs(int);
 int get_numbase_len(unsigned int num, unsigned int base);
 void fill_numbase_buff(unsigned int num, unsigned int base,
-		       char *buff, int buff_size);
+					   char *buff, int buff_size);
 
 int usage_error(void);
 int malloc_error(void);
 int f_open_error(char *filename);
 void set_op_tok_error(int error_code);
+int unknown_op_error(char *opcode, unsigned int line_number);
+int no_int_error(unsigned int line_number);
 
-#endif	/* _MONTY_H_ */
+#endif /* _MONTY_H_ */
